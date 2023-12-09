@@ -11,4 +11,4 @@ def square_matrix_simple(matrix=[]):
             new_matrix[l][r] = pow(i, 2)
             r += 1
         l += 1
-    return new_matrix
+    return (new_matrix)
