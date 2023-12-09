@@ -3,10 +3,6 @@ def square_matrix_simple(matrix=[]):
     new_matrix = matrix.copy()
     l = 0
     r = 0
-    for ls in matrix:
-        r = 0
-        for i in ls:
-            new_matrix[l][r] = pow(i, 2)
-            r += 1
-        l += 1
+    for i in range(len(matrix)):
+        new_matrix[i] = list(map(lambda x: x**2, matrix[i]))
     return (new_matrix)
