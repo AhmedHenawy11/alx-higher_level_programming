@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new_matrix = []
+    new_matrix = matrix.copy()
     l = 0
     r = 0
-    for list in matrix:
-        new_matrix.append(list)
     for ls in matrix:
         r = 0
         for i in ls:
