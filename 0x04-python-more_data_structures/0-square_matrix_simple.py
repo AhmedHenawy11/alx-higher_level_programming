@@ -5,7 +5,6 @@ def square_matrix_simple(matrix=[]):
     r = 0
     for list in matrix:
         new_matrix.append(list)
-    print(new_matrix[l][r])
     for ls in matrix:
         r = 0
         for i in ls:
