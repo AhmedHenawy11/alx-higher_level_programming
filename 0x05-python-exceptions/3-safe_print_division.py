@@ -6,6 +6,7 @@ def safe_print_division(a, b):
         div = None
     finally:
         print(f"Inside result: {div}")
+        return (div)
 
 
 
