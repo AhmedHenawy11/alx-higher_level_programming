@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-
-"""Making private attributes height and width"""
+"""
+Module 2-rectangle
+Contains class Rectangl
+with private attribute  width and height
+"""
 
 
 class Rectangle:
     """
-    Defining a  class rectangle private attributes width and height
-    Attributes:
+    Defines class rectangle private attribute width and height
+    Args:
         width (int): width
         height (int): height
-    Methods:
+    Functions:
         __init__ (self, width, height)
         width (self)
         width (self, value)
@@ -17,34 +20,34 @@ class Rectangle:
         height (self, value)
     """
     def __init__(self, width=0, height=0):
-        """ Initialize  rectangles attributes"""
-        self._width = width
-        self._height = height
+        """ Initialize  rectangles """
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """Getter return width"""
-        return self._width
+        """ Getter returns width """
+        return self.__width
 
     @width.setter
     def width(self, value):
-        """Height Setter"""
+        """ Setter sets width if int > 0 """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        self._width = value
+        self.__width = value
 
     @property
     def height(self):
-        """Getter return height"""
-        return self._height
+        """ Getter returns heightt """
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """Height Setter"""
+        """ Setter sets height-if int > 0 """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-        self._height = value
+        self.__height = value
