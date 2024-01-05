@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module 2-rectangle
-Contains class Rectangle
+Contains class Rectangl
 with private attribute  width and height
 """
 
