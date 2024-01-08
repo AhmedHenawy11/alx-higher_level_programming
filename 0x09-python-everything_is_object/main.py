@@ -1,3 +1,6 @@
-s1 = "Best School"
-s2 = "Best School"
-print(s1 is s2)
+def increment(n):
+    n += 1
+
+a = 1
+increment(a)
+print(a)
