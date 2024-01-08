@@ -1,6 +1,4 @@
-def increment(n):
-    n.append(4)
+a = (1)
+b = (1)
 
-l = [1, 2, 3]
-increment(l)
-print(l)
+print(a is b)
