@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """
 module contains one class
 """
 
 
 class Rectangle:
-    """ class rectangle """
+    """ class Rectangle """
     def __init__(self, width=0, height=0):
         """ instantiation """
         self.width = width
@@ -51,7 +50,7 @@ class Rectangle:
         return (self.__height + self.__width) * 2
 
     def __str__(self):
-        """ returns a nicely printable representation """
+        """ returns a printable string of the class """
         ch = ""
         if self.__width == 0 or self.__height == 0:
             return ch
@@ -62,8 +61,8 @@ class Rectangle:
         return ch[:-1]
 
     def __repr__(self):
-        """ returns a string similar to code of generating new object """
-        return f"Rectangle({self.width}, {self.height})"
+        """ returns a string that creates a new object after evaluation """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         """ called when an object is deleted with del """
