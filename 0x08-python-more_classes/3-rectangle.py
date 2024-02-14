@@ -59,3 +59,17 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             self.perimeter = 0
         return self.perimeter
+
+    def __str__(self):
+        """Return the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+        """
+        ch = ''
+        if self.__width == 0 or self.__height == 0:
+            return ch
+        for i in range(self.height):
+            for i in  range(self.width):
+                ch += "#"
+            ch += '\n'
+        return ch[:-1]
