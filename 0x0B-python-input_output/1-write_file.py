@@ -4,7 +4,7 @@ This module contains one function
 """
 
 
-def read_file(filename=""):
-    """ reads a text file and prints its content """
-    with open(filename) as file:
-        return len(file)
+def write_file(filename="", text=""):
+    """ appends  a text into file and return ist length """
+    with open(filename, 'w') as file:
+        return file.write(text)
