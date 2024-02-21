@@ -6,6 +6,6 @@ import json
 
 
 def load_from_json_file(filename):
-    """ writes an Object to a text file, using a JSON representation """
+    """ creates an Object from a “JSON file” """
     with open(filename, 'r') as file:
         return file.write(json.loads(file.read()))
