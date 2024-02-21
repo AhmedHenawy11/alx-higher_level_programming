@@ -6,4 +6,5 @@ def read_file(filename=""):
     :param filename: a file to be passed and print its outpu
     """
     with open(filename, 'r') as file:
-        print(file.read())
+        for line in file:
+            print(line, end="")
