@@ -100,16 +100,16 @@ class Rectangle(Base):
         5th argument should be the y attribute
         """
         arg_count = 0
-            if args != ():
-                for arg in args:
-                    arg_count += 1
-                    if arg == 1:
-                        self.id == arg
-                    elif arg == 2:
-                        self.__width == arg
-                    elif arg == 3:
-                        self.__height == arg
-                    elif arg == 4:
-                        self.__x == arg
-                    elif arg == 5:
-                        self.__y == arg
+        if args != ():
+            for arg in args:
+                arg_count += 1
+                if arg == 1:
+                    self.id == arg
+                elif arg == 2:
+                    self.__width == arg
+                elif arg == 3:
+                    self.__height == arg
+                elif arg == 4:
+                    self.__x == arg
+                elif arg == 5:
+                    self.__y == arg
