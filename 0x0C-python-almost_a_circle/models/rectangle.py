@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 """
-This module contain Rectangle class
+This module contains one class Rectangle that inherits from Base class
 """
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
-    """ Rectangle Class """
-
+    """ Rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ instantiation """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -41,7 +40,7 @@ class Rectangle(Base):
         """ width setter """
         if type(value) is not int:
             raise TypeError('width must be an integer')
-        elif value <= 0:
+        if value <= 0:
             raise ValueError('width must be > 0')
         self.__width = value
 
@@ -50,34 +49,33 @@ class Rectangle(Base):
         """ height setter """
         if type(value) is not int:
             raise TypeError('height must be an integer')
-        elif value <= 0:
+        if value <= 0:
             raise ValueError('height must be > 0')
         self.__height = value
 
     @x.setter
     def x(self, value):
-        """ x setter """
+        """ x getter """
         if type(value) is not int:
             raise TypeError('x must be an integer')
-        elif value < 0:
+        if value < 0:
             raise ValueError('x must be >= 0')
         self.__x = value
 
     @y.setter
     def y(self, value):
-        """ y setter """
+        """ y getter """
         if type(value) is not int:
             raise TypeError('y must be an integer')
-        elif value < 0:
+        if value < 0:
             raise ValueError('y must be >= 0')
         self.__y = value
 
     def area(self):
-        """ return the area of the circle """
+        """ returns the area value of each rectangle """
         return self.__width * self.__height
 
     def display(self):
-        """ prints the rectangle in stdout with '#' """
         """ prints the rectangle in stdout with '#' """
         for i in range(self.__y):
             print()
@@ -90,4 +88,41 @@ class Rectangle(Base):
 
     def __str__(self):
         """ string representation of the object """
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """ updates the instance attributes:
+            1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute
+        """
+        count = 0
+        if args != ():
+            for a in args:
+                count += 1
+                if count == 1:
+                    self.id = a
+                if count == 2:
+                    self.width = a
+                if count == 3:
+                    self.height = a
+                if count == 4:
+                    self.x = a
+                if count == 5:
+                    self.y = a
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle """
+        newd = dict()
+        newd["id"] = self.id
+        newd["width"] = self.width
+        newd["height"] = self.height
+        newd["x"] = self.x
+        newd["y"] = self.y
+        return newd
