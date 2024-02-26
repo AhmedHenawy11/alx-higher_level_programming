@@ -90,3 +90,25 @@ class Rectangle(Base):
         """ string representation of the object """
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+        arg_count = 0
+        for arg in args:
+            arg_count += 1
+            if arg == 1:
+                self.id == arg
+            elif arg == 2:
+                self.__width == arg
+            elif arg == 3:
+                self.__height == arg
+            elif arg == 4:
+                self.__x == arg
+            elif arg == 5:
+                self.__y == arg
