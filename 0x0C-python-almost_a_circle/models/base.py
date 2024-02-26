@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contain base class
+This module contains one class: Base
 """
 import json
 import csv
@@ -8,13 +8,14 @@ import csv
 
 class Base:
     """
-     This class will be the “base” of all other classes in this project,The goal of this class is:
+    The goal of this class is:
     to manage id attribute in all our future classes
     and to avoid duplicating the same code
-     """
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ instantiation """
         if id is not None:
             self.id = id
         else:

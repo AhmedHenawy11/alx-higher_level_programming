@@ -90,39 +90,3 @@ class Rectangle(Base):
         """ string representation of the object """
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
-
-    def update(self, *args, **kwargs):
-        """ updates the instance attributes:
-            1st argument should be the id attribute
-            2nd argument should be the width attribute
-            3rd argument should be the height attribute
-            4th argument should be the x attribute
-            5th argument should be the y attribute
-        """
-        count = 0
-        if args != ():
-            for a in args:
-                count += 1
-                if count == 1:
-                    self.id = a
-                if count == 2:
-                    self.width = a
-                if count == 3:
-                    self.height = a
-                if count == 4:
-                    self.x = a
-                if count == 5:
-                    self.y = a
-        else:
-            for k, v in kwargs.items():
-                setattr(self, k, v)
-
-    def to_dictionary(self):
-        """ returns the dictionary representation of a Rectangle """
-        newd = dict()
-        newd["id"] = self.id
-        newd["width"] = self.width
-        newd["height"] = self.height
-        newd["x"] = self.x
-        newd["y"] = self.y
-        return newd
