@@ -106,10 +106,10 @@ class Rectangle(Base):
                 if arg == 1:
                     self.id == arg
                 elif arg == 2:
-                    self.__width == arg
+                    self.width == arg
                 elif arg == 3:
-                    self.__height == arg
+                    self.height == arg
                 elif arg == 4:
-                    self.__x == arg
+                    self.x == arg
                 elif arg == 5:
-                    self.__y == arg
+                    self.y == arg
