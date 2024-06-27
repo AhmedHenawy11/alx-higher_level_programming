@@ -2,7 +2,7 @@
 """ Lists all states from the database hbtn_0e_0_usa """
 
 # Import necessary modules
-import MySQLdb
+import MySQLdb # type: ignore
 import sys
 
 # Check if the script is being run as the main program
