@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""The script that takes in a URL,sends a request
-- to the URL and displays the value.
 """
-
+Python script that takes in a URL and an email address,
+sends a POST request to the passed URL with the email,
+and displays the body of the response
+"""
+import requests
 import sys
-import urllib.request
+
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    r = requests.post(sys.argv[1], data={'email': sys.argv[2]})
+    print(r.text)

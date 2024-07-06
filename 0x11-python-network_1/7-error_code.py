@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""The script that takes in a URL 
-and display the body sends a request to the URL
 """
-
-import sys
+Python script that sends a request to the URL and
+displays:
+- The body of the response if there are no errors
+- The error code when there is an HTTP error.
+"""
 import requests
+import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-
-    r = requests.get(url)
+    r = requests.get(sys.argv[1])
     if r.status_code >= 400:
         print("Error code: {}".format(r.status_code))
     else:
